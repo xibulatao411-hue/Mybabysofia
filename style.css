@@ -1,0 +1,223 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --dark: #061b11;
+  --forest: #103d28;
+  --green: #286b45;
+  --mint: #a5d6a7;
+  --cream: #e8f5e9;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at top left, #1d593b, transparent 45%),
+    radial-gradient(ellipse at bottom right, #17452f, transparent 45%),
+    var(--dark);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 32px 24px;
+  text-align: center;
+  border: 1px solid #83b994;
+  border-radius: 26px;
+  background: rgba(7, 37, 23, 0.94);
+  box-shadow: 0 20px 60px #0005;
+}
+
+h1 {
+  color: #c5e8c9;
+  font-size: clamp(28px, 7vw, 38px);
+  line-height: 1.3;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.heart {
+  color: var(--mint);
+  font-size: 44px;
+  animation: heartbeat 1.2s infinite alternate;
+}
+
+@keyframes heartbeat {
+  to {
+    transform: scale(1.12);
+  }
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--mint);
+}
+
+input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 22px 0 14px;
+  padding: 15px;
+  border: 1px solid var(--mint);
+  border-radius: 30px;
+  outline: none;
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  font-size: 18px;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px #a5d6a744;
+}
+
+button {
+  padding: 13px 23px;
+  border: 1px solid var(--mint);
+  border-radius: 30px;
+  background: var(--green);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #347d50;
+}
+
+button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.primary {
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#message {
+  min-height: 22px;
+  color: #ffcdd2;
+  font-size: 14px;
+}
+
+.buttons {
+  position: relative;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+#no {
+  position: relative;
+  touch-action: manipulation;
+}
+
+.letter {
+  margin-top: 26px;
+  padding: 22px;
+  border-radius: 12px;
+  background: #e8f0df;
+  color: #173d29;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.letter h2 {
+  text-align: center;
+  color: #205638;
+  font-weight: normal;
+}
+
+.letter p {
+  line-height: 1.85;
+  color: #244732;
+}
+
+.signature {
+  white-space: pre-line;
+  font-style: italic;
+}
+
+.footer {
+  margin-top: 25px;
+  color: var(--mint);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.decoration {
+  position: fixed;
+  color: var(--mint);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: float 4s ease-in-out infinite;
+}
+
+.deco1 {
+  top: 12%;
+  left: 8%;
+}
+
+.deco2 {
+  top: 22%;
+  right: 8%;
+  animation-delay: 1s;
+}
+
+.deco3 {
+  bottom: 12%;
+  right: 12%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 380px) {
+  .card {
+    padding: 26px 17px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  button {
+    padding: 12px 18px;
+  }
+
+  .letter {
+    padding: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
